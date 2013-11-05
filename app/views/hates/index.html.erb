@@ -1,25 +1,58 @@
-<h1>Listing hates</h1>
+<div id="notice">
+  <%= notice %>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<header>
+  <h1><s>Cig</s></h1>
+  <h2>Hi there,</h2>
+  <p>
+    [2013 Nov 5th]<br>
+    I was having lunch in a small restaurant.
+    There's a big open window.
+    While I was eating, some guy lit a cigarette and started smoking
+    beside that big open window.
+    The whole room, suddenly, was filled up by the smell.
+    If you hate cigarettes as well, you know the rage.
+  </p>
+  <p>
+    Share your feelings, tell people why they should not smoke, at least, not around others.
+    <a id="jump" href="#theForm">Jump to Share</a>
+  </p>
+</header>
 
-  <tbody>
-    <% @hates.each do |hate| %>
-      <tr>
-        <td><%= link_to 'Show', hate %></td>
-        <td><%= link_to 'Edit', edit_hate_path(hate) %></td>
-        <td><%= link_to 'Destroy', hate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<section id="says">
+<%= paginate @hates %>
+<% @hates.each do |hate| %>
+  <article class="message">
+    <header>
+      <span class="name">
+      <% if hate.name != '' %>
+        <strong><%= hate.name %></strong> said
+      <% else %>
+        Someone said
+      <% end %>
+      </span>
+    </header>
+    <p>
+      <%= hate.content %>
+    </p>
+  </article>
+<% end %>
+<%= paginate @hates %>
+</section>
 
-<br>
-
-<%= link_to 'New Hate', new_hate_path %>
+<%= form_for(@hate) do |f| %>
+  <a id="theForm"><input type="hidden"></a>
+  <div class="field">
+    <%= f.label :name %><br>
+    <span class="small">Leave name blank if you like</span><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br>
+    <%= f.text_area :content, style: "width: 400px; height: 120px;" %>
+  </div>
+  <div class="actions">
+    <%= f.submit value="Submit Feelings" %>
+  </div>
+<% end %>

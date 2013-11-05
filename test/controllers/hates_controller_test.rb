@@ -18,7 +18,7 @@ class HatesControllerTest < ActionController::TestCase
 
   test "should create hate" do
     assert_difference('Hate.count') do
-      post :create, hate: {  }
+      post :create, hate: { content: @hate.content, name: @hate.name }
     end
 
     assert_redirected_to hate_path(assigns(:hate))
@@ -35,7 +35,7 @@ class HatesControllerTest < ActionController::TestCase
   end
 
   test "should update hate" do
-    patch :update, id: @hate, hate: {  }
+    patch :update, id: @hate, hate: { content: @hate.content, name: @hate.name }
     assert_redirected_to hate_path(assigns(:hate))
   end
 

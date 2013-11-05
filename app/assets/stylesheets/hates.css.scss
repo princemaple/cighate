@@ -1,3 +1,95 @@
-// Place all the styles related to the hates controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$bg: #aaa;
+$messageColor: #fff;
+
+body {
+  background: image-url("cigarettes-kill-you.jpg")
+    no-repeat fixed;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+form {
+  margin-top: 30px;
+}
+
+label {
+  font-size: 1.5rem;
+  color: #000;
+}
+
+#wrapper {
+  background-color: rgba(200, 200, 200, 0.5);
+  width: 80%;
+  min-width: 800px;
+  max-width: 1000px;
+  margin: auto;
+  overflow: hidden;
+}
+
+#container {
+  padding: 20px;
+  color: #fff;
+  
+  > header {
+    > h1 {
+      font-size: 3rem;
+    }
+  }
+}
+
+#jump {
+  color: #000;
+  
+  &:hover {
+    color: #222;
+    background: rgba(120, 120, 120, 0.5);
+  }
+}
+
+.message {
+  background-color: $messageColor;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  color: #000;
+  
+  header {
+    padding: 10px;
+    
+    .name {
+      font-size: 1.5rem;
+    }
+  }
+  
+  p {
+    padding: 5px 10px;
+    margin: 0 10px;
+    font-size: 1.1rem;
+  }
+}
+
+.pagination {
+  margin: 20px 0;
+  
+  a, .current {
+    padding: 5px;
+    background-color: #fff;
+    border-radius: 1px;
+  }
+
+  a:hover {
+    background: #eee;
+    color: #f83;
+  }
+
+  .current {
+    background-color: #38f;
+  }
+}
+
+.small {
+  color: #666;
+  font-size: 0.7rem;
+}
