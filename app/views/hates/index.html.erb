@@ -1,0 +1,25 @@
+<h1>Listing hates</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hates.each do |hate| %>
+      <tr>
+        <td><%= link_to 'Show', hate %></td>
+        <td><%= link_to 'Edit', edit_hate_path(hate) %></td>
+        <td><%= link_to 'Destroy', hate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Hate', new_hate_path %>
