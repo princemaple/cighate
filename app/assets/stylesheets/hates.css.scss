@@ -1,5 +1,5 @@
 $bg: #aaa;
-$messageColor: #fff;
+$messageColor: rgba(255, 255, 255, 0.8);
 
 body {
   background: image-url("cigarettes-kill-you.jpg")
@@ -8,7 +8,10 @@ body {
 
 a {
   text-decoration: none;
-  color: inherit;
+  
+  &:visited {
+    color: inherit;
+  }
 }
 
 form {
@@ -40,6 +43,14 @@ label {
   }
 }
 
+#noCig {
+  color: #fff;
+  
+  &:hover {
+    color: #ddd;
+  }
+}
+
 #jump {
   color: #000;
   
@@ -47,6 +58,13 @@ label {
     color: #222;
     background: rgba(120, 120, 120, 0.5);
   }
+}
+
+#notice {
+  background-color: #fff;
+  padding: 3px;
+  border-radius: 3px;
+  margin-bottom: 20px;
 }
 
 .message {
@@ -72,6 +90,7 @@ label {
 
 .pagination {
   margin: 20px 0;
+  color: #000;
   
   a, .current {
     padding: 5px;
@@ -85,11 +104,13 @@ label {
   }
 
   .current {
+    color: #fff;
     background-color: #38f;
   }
 }
 
 .small {
-  color: #666;
+  color: #ddd;
+  background-color: rgba(80, 80, 80, 0.3);
   font-size: 0.7rem;
 }

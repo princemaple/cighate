@@ -1,9 +1,5 @@
-<div id="notice">
-  <%= notice %>
-</div>
-
 <header>
-  <h1><s>Cig</s></h1>
+  <h1><s id="noCig"><%= link_to "Cig", root_url %></s></h1>
   <h2>Hi there,</h2>
   <p>
     [2013 Nov 5th]<br>
@@ -22,14 +18,17 @@
 
 <section id="says">
 <%= paginate @hates %>
+<% if @notice %>
+  <div id="notice"><%= @notice %></div>
+<% end %>
 <% @hates.each do |hate| %>
   <article class="message">
     <header>
       <span class="name">
       <% if hate.name != '' %>
-        <strong><%= hate.name %></strong> said
+        <strong><%= hate.name %></strong> said:
       <% else %>
-        Someone said
+        Someone said:
       <% end %>
       </span>
     </header>

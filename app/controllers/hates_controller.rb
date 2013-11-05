@@ -2,14 +2,12 @@ class HatesController < ApplicationController
   before_action :set_hate
 
   # GET /hates
-  # GET /hates.json
   def index
     @hate = Hate.new
     @notice = params[:notice]
   end
 
   # POST /hates
-  # POST /hates.json
   def create
     @hate = Hate.new(hate_params)
     
