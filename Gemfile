@@ -45,6 +45,7 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'figaro'
 gem 'kaminari'
 gem 'rails_12factor', group: :production
 # gem 'unicorn'
